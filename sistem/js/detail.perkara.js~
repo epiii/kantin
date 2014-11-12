@@ -1,0 +1,472 @@
+(function($) {
+	$(document).ready(function(e) {
+		$("#da-tab-tersangka").tabs();
+		$("#da-ex-tabs, #da-ex-tabs-plain").tabs();
+		
+		$("#da-tgl-penyidikan").datepicker({dateFormat: "dd-mm-yy"});
+		$("#da-tgl-diterima").datepicker({dateFormat: "dd-mm-yy"});
+		$("#da-tgl-bp-dikeluarkan").datepicker({dateFormat: "dd-mm-yy"});
+		$("#da-tgl-bp-diterima").datepicker({dateFormat: "dd-mm-yy"});
+		$("#da-tgl-p16a-dikeluarkan").datepicker({dateFormat: "dd-M-yy"});
+		$("#da-tgl-t7-dikeluarkan").datepicker({dateFormat: "dd-M-yy"});
+		$("#da-tgl-p31-dikeluarkan").datepicker({dateFormat: "dd-M-yy"});
+		$("#da-tgl-p32-dikeluarkan").datepicker({dateFormat: "dd-M-yy"});
+		
+		$.fn.select2 && $(".select2").select2();
+
+		if($.fn.validate) {
+			$("#da-form-p16a").validate({
+				ignore: '.ignore', 
+				rules: {
+					tgl_dikeluarkan: {
+						required: true
+					}, 
+					tmp_dikeluarkan: {
+						required: true
+					}
+				}
+			});
+		}
+		
+		if($.fn.validate) {
+			$("#da-form-t7").validate({
+				ignore: '.ignore', 
+				rules: {
+					tgl_dikeluarkan: {
+						required: true
+					}, 
+					tmp_dikeluarkan: {
+						required: true
+					},
+					uraian_singkat: {
+						required: true
+					}
+				}
+			});
+		}
+		
+		
+		if($.fn.validate) {
+			$("#da-form-p31").validate({
+				ignore: '.ignore', 
+				rules: {
+					tgl_dikeluarkan: {
+						required: true
+					}, 
+					tmp_dikeluarkan: {
+						required: true
+					}
+				}
+			});
+		}
+		
+		
+		if($.fn.validate) {
+			$("#da-form-p32").validate({
+				ignore: '.ignore', 
+				rules: {
+					tgl_dikeluarkan: {
+						required: true
+					}, 
+					tmp_dikeluarkan: {
+						required: true
+					}
+				}
+			});
+		}
+		
+		$("#p31-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-31", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-31", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		
+		$("#p32-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-32", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-32", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		
+		$("#t7-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen T-7", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak T-7", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		
+		$("#p16a-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-16A", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-16A", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});		
+
+		$("#p16-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-16", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-16", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		
+		$("#t4-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen T-4", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak T-4", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		
+		$("#p18-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-18", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-18", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		
+		$("#p19-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-19", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-19", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		$("#p21-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-21", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-21", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		$("#p21a-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-21A", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-21A", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		$("#p20-dialog-div").dialog({
+			autoOpen: false, 
+			title: "Pratampil Dokumen P-20", 
+			modal: true, 
+			width: "840", 
+			height: "480", 
+			buttons: [{
+					text: "Cetak P-20", 
+					click: function() {
+						$('#berkas').printArea();
+						//return false;
+						$( this ).dialog( "close" );
+			}}]
+		});
+		
+		$("#da-ex-dialog-form").bind("click", function(event) {
+			$("#da-ex-dialog-form-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+		
+		$("#ubah-spdp").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'spdp',
+				value: 'ubah'
+			});
+		});
+		
+		$("#tambah-tersangka").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'tersangka',
+				value: 'tambah'
+			});
+		});
+		
+		$("#ubah-tersangka").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'tersangka',
+				value: 'ubah'
+			});
+		});
+		
+		$("#tambah-jaksa").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'jaksa',
+				value: 'tambah'
+			});
+		});
+		
+		$("#ubah-jaksa").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'jaksa',
+				value: 'ubah'
+			});
+		});
+		$("#ubah-p16a").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'p16a',
+				value: 'ubah'
+			});
+		});
+		
+		$("#tambah-p16a").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'p16a',
+				value: 'tambah'
+			});
+		});
+		
+		$("#ubah-t7").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 't7',
+				value: 'ubah'
+			});
+		});
+		
+		$("#tambah-t7").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 't7',
+				value: 'tambah'
+			});
+		});
+		
+		$("#ubah-p31").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'p31',
+				value: 'ubah'
+			});
+		});
+		
+		$("#tambah-p31").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'p31',
+				value: 'tambah'
+			});
+		});
+
+		$("#ubah-p32").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'p32',
+				value: 'ubah'
+			});
+		});
+		
+		$("#tambah-p32").bind("click", function(event) {
+			$('#mode-input').attr({
+				name: 'p32',
+				value: 'tambah'
+			});
+		});
+
+		$("#p32-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "functions/form.p32.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p32-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+
+		$("#p31-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "functions/form.p31.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p31-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+
+		$("#t7-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "functions/form.t7.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#t7-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+		
+		$("#p16a-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "functions/form.p16a.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p16a-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+
+		$("#p16-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "modul/perkara/form.p16.php";
+			var url2 = "modul/sms/sms.pesan.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url2, {kd: kd_perkara} ,function(data) {
+				return false;
+			});
+			
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p16-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+		
+		$("#t4-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "modul/perkara/form.t4.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#t4-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+		
+		$("#p18-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "modul/perkara/form.p18.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p18-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+		
+		$("#p19-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "modul/perkara/form.p19.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p19-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+		
+		$("#p21-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "modul/perkara/form.p21.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p21-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+		
+		$("#p21a-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "modul/perkara/form.p21a.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p21a-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+		
+		$("#p20-dialog").bind("click", function(event) {
+			//$("#berkas").html('<img src="loader.gif"/>').show();
+			var url = "modul/perkara/form.p20.php";
+			var kd_perkara = $('input:hidden[name=kd]').val();
+			$.post(url, {kd: kd_perkara} ,function(data) {
+				$("#berkas").html(data).show();
+			});
+
+			$("#p20-dialog-div").dialog("option", {modal: true}).dialog("open");
+			event.preventDefault();
+		});
+	});
+}) (jQuery);

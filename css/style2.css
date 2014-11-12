@@ -1,0 +1,21 @@
+
+table {
+	font-family: Tahoma; 
+	font-size: 7pt;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #999999;
+	border-collapse: collapse;
+	margin: 10px 0px;
+}
+
+td{
+	padding: 0.5em;
+	vertical-align: top;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #969BA5;
+	border-collapse: collapse;
+}
+
+

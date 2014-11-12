@@ -1,0 +1,26 @@
+05.01.2013:
+- menghapusJS Costumizer dari footer.php
+- dari Circular Stat Plugin dari footer.php
+- memperbaiki tampilan statistik di beranda.php
+- merubah validasi login menjadi bahasa indonesia
+- merubah judul web menjadi SIPKAN Surabaya
+
+06.01.2013:
+- menambahkan menu tahanan, tersangka, barang bukti
+- menghapus menu form
+
+08.01.2013:
+- menyesuaikan sistem untuk menggunakan database baru
+- menghapus demo_kejaksaan_alfa.sql diganti menjadi sipkandb_alfa.sql
+- sistem sudah bisa login menggunakan database baru
+- menambahkan beberapa file di dalam folder functions
+- memperbaiki beranda.php agar dapat menampilkan nama pengguna dan jabatan berdasarkan database
+- login dan logout tercatat pada log
+- menghapus JSdemo di footer.php
+- menambahkan dialog modal pada jaksa.php
+
+11.01.2013:
+- membuat folder functions/json untuk menggenerate file json yg dibutuhkan
+- membuat folder functions/crud untuk menyimpan fungsi yang menangani crud data
+- mengubah fugsi.php menjadi fuction.umum.php
+
